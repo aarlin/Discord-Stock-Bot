@@ -26,7 +26,13 @@ For the time being development is halted, but if you'd like to contribute, make 
   - [Requests](http://docs.python-requests.org/en/master/) (pip install requests)
 3. [Create a bot profile through Discord developer portal](https://discordapp.com/developers/applications/)
 4. Generate a token on the "Bot" page
-5. Put token in enviormental variables of your host or edit file to include token directly
+5. Put token in environment variables of your host or edit file to include token directly
 6. Set host timezone to PST or tweak file to work for your timezone
 7. Run stockBot.py
 8. (Additional) [Invite bot to your server](https://github.com/jagrosh/MusicBot/wiki/Adding-Your-Bot-To-Your-Server)
+
+# Virtualenv
+
+`python3 -m venv stock`  
+`source stock/bin/activate`  
+
