@@ -6,12 +6,16 @@ import utils
 import marketAPI as api
 import re
 import os
+from dotenv import load_dotenv
 
-TOKEN = os.environ['TOKEN']
+load_dotenv()
+
+TOKEN = os.getenv('DISCORD_TOKEN')
 pattern_quote = re.compile(r'[$]([A-Za-z]+)[+]?')
 
 class MyClient(discord.Client):
     async def on_ready(self):
+        print('Bot is online')
         await client.change_presence(status=discord.Status.online, activity=discord.Game("with Stonks"))
 
     async def on_message(self, message: discord.message.Message):
@@ -30,7 +34,7 @@ class MyClient(discord.Client):
 
             else:
                 if matches_len > 0:
-                    await message.channel.send("Market is closed ya retard. Go do something else.")
+                    await message.channel.send("Market is closed")
                 else:
                     pass
 

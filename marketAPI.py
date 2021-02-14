@@ -6,8 +6,11 @@ from datetime import datetime
 import json
 import os
 import utils
+from dotenv import load_dotenv
 
-iexToken = os.environ['IEX_TOKEN']
+load_dotenv()
+
+iexToken = os.getenv('IEX_TOKEN')
 
 
 def get_basic_quote(ticker: str) -> discord.Embed:
